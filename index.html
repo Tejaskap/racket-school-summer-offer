@@ -110,6 +110,47 @@
 
     @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
     .float-anim { animation: float 3s ease-in-out infinite; }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background-color: rgba(11, 15, 25, 0.95);
+      min-width: 220px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      z-index: 1;
+      border: 1px solid rgba(249,115,22,0.3);
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+
+    .dropdown-content a {
+      color: #f1f5f9;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: rgba(249,115,22,0.1);
+      color: var(--orange);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown > button:hover {
+      color: var(--orange);
+    }
   </style>
 </head>
 <body>
@@ -118,7 +159,18 @@
   <nav class="sticky top-0 z-50 backdrop-blur-md bg-black/40 border-b border-white/5">
     <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
       <img src="./logo.png" alt="The Racket School" class="h-12 w-auto">
-      <a href="#pricing" class="text-sm font-semibold text-orange hover:opacity-80 transition">Zur Anmeldung</a>
+      <div class="dropdown">
+        <button class="text-sm font-semibold text-orange transition cursor-pointer bg-none border-none">Navigation ▼</button>
+        <div class="dropdown-content">
+          <a href="#verfuegbare-slots">Verfügbare Slots</a>
+          <a href="#pricing">Deine Padel-Gruppe</a>
+          <a href="#schedule">Der Kursplan</a>
+          <a href="#included">Was inklusive ist</a>
+          <a href="#instagram">Instagram</a>
+          <a href="#terms">Geschäftsbedingungen</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -142,12 +194,12 @@
       <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
         Feste Gruppen, feste Spieler, echte Fortschritte. Keine Vollbuchung. Keine Improvisation. Dein Weg zu neuem Spielniveau — jeden Tag der Woche.
       </p>
-      <a href="#pricing" class="btn-primary px-8 py-4 rounded-xl font-bold text-lg text-center inline-block">Jetzt anmelden</a>
+      <a href="https://forms.gle/2B6ZQGfipJiquKKn8" target="_blank" class="btn-primary px-8 py-4 rounded-xl font-bold text-lg text-center inline-block">Jetzt anmelden</a>
     </div>
   </section>
 
   <!-- QUICK STATS -->
-  <section class="py-24 px-6 bg-white/2">
+  <section id="verfuegbare-slots" class="py-24 px-6 bg-white/2">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-16 text-center">Verfügbare Slots</h2>
       <div id="quickStats">
@@ -295,7 +347,7 @@
   </section>
 
   <!-- SCHEDULE -->
-  <section class="py-24 px-6" style="background:var(--black)">
+  <section id="schedule" class="py-24 px-6" style="background:var(--black)">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-16 text-center">Der Kursplan</h2>
 
@@ -307,7 +359,7 @@
   </section>
 
   <!-- INCLUDED -->
-  <section class="py-24 px-6 section-surface">
+  <section id="included" class="py-24 px-6 section-surface">
     <div class="max-w-6xl mx-auto">
       <div class="max-w-3xl mx-auto text-center mb-16">
         <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-4">Was alles inklusive ist</h2>
@@ -351,15 +403,15 @@
       </div>
 
       <!-- Google Form embed -->
-      <div class="bg-white/5 rounded-2xl p-8 border border-white/10">
-        <p class="text-slate-400 text-center mb-4">Google Form wird hier eingebettet. Link: <a href="#" class="text-orange hover:opacity-80" id="formLink">Hier klicken</a></p>
-        <div id="formContainer"></div>
+      <div class="bg-white/5 rounded-2xl p-8 border border-white/10 text-center">
+        <a href="https://forms.gle/2B6ZQGfipJiquKKn8" target="_blank" class="btn-primary inline-block px-8 py-4 rounded-xl font-bold text-lg mb-4">Zum Anmeldeformular →</a>
+        <p class="text-slate-400 text-sm">Oder öffne das Formular in neuem Fenster</p>
       </div>
     </div>
   </section>
 
   <!-- INSTAGRAM FOLLOW -->
-  <section class="py-24 px-6" style="background:var(--black)">
+  <section id="instagram" class="py-24 px-6" style="background:var(--black)">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-4 text-center">Folg uns auf Instagram</h2>
       <p class="text-lg text-slate-400 text-center mb-16">Tipps, Training & Community</p>
@@ -397,8 +449,139 @@
     </div>
   </section>
 
+  <!-- TERMS & CONDITIONS -->
+  <section id="terms" class="py-16 px-6 bg-surface2">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-white mb-12 text-center">Geschäftsbedingungen</h2>
+
+      <div class="space-y-8 text-slate-300">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">1. Registrierung und Anmeldung</h3>
+          <p class="text-sm">Die Anmeldung zu einem Padel-Kurs ist über das Online-Formular auf Google Forms Website möglich. Alle erforderlichen Angaben müssen korrekt und vollständig ausgefüllt werden. Die Anmeldung ist verbindlich und wird nach Zahlungseingang bestätigt.</p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">2. Kursstruktur</h3>
+          <p class="text-sm">Alle Kurse bestehen aus 7 Trainingseinheiten pro Block. Trainerwechsel können vorkommen und werden intern organisiert. Dies beeinträchtigt nicht die Kursqualität oder das Trainingspensum.</p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">3. Zahlungsbedingungen</h3>
+          <ul class="text-sm space-y-2 list-disc list-inside">
+            <li>Anfänger-Gruppe: €270 pro Block (7 Sessions)</li>
+            <li>Amateure-Gruppe: €270 pro Block (7 Sessions)</li>
+            <li>Fortgeschrittene-Gruppe: €350 pro Block (7 Sessions)</li>
+            <li>Privatstunden: Nach Vereinbarung</li>
+          </ul>
+          <p class="text-sm mt-3">Die Zahlung ist fällig nach Anmeldung. Rechnungen werden per E-Mail versendet. Zahlungen erfolgen per Überweisung oder digitale Zahlungsmethoden.</p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">4. Rücktritt und Stornierung</h3>
+          <ul class="text-sm space-y-2 list-disc list-inside">
+            <li>Zahlungen für gebuchte Blöcke sind nicht rückerstattbar</li>
+            <li>Teilnehmer können bis 7 Tage vor Kursbeginn stornieren; die Gebühr wird dann zu 50% erstattet</li>
+            <li>Nach dieser Frist entfällt der Anspruch auf Rückerstattung</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">5. Fehlzeiten und Platztausch</h3>
+          <ul class="text-sm space-y-2 list-disc list-inside">
+            <li>Trainingseinheiten können mit anderen Kursteilnehmern innerhalb desselben Blocks getauscht werden</li>
+            <li>Fehlzeiten führen zu keiner Erstattung oder Gutschrift</li>
+            <li>Eine Verschiebung auf den nächsten Block ist nicht möglich</li>
+            <li>Bitte teilen Sie Fehlzeiten rechtzeitig per WhatsApp mit</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">6. Trainierabsenz und Ausfallregelung</h3>
+          <p class="text-sm mb-3">Falls der Trainer ausfällt:</p>
+          <ul class="text-sm space-y-2 list-disc list-inside">
+            <li>Kurzfristiger Ausfall (mit Vertretung): Kurs findet wie geplant statt</li>
+            <li>Ausfall ohne Vertretung: Teilnehmer erhalten 30% Erstattung pro ausgefallener Einheit. Ein kostenloser Ausgleichstermin wird angeboten (sofern möglich)</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">7. Gruppenänderungen und Transfers</h3>
+          <ul class="text-sm space-y-2 list-disc list-inside">
+            <li>Transfers zwischen Gruppen innerhalb desselben Levels sind kostenlos</li>
+            <li>Transfers zu einem anderen Level erfordern zusätzliche Zahlung (Differenzbetrag)</li>
+            <li>Transferanfragen müssen mindestens 7 Tage vor Kursbeginn erfolgen</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">8. Ausrüstung und Haftung</h3>
+          <ul class="text-sm space-y-2 list-disc list-inside">
+            <li>Nice Racket Club stellt Schläger zur Verfügung — solange welche verfügbar sind</li>
+            <li>Bei Nichtverfügbarkeit müssen Teilnehmer einen eigenen Schläger mitbringen</li>
+            <li>The Racket School haftet nicht für fehlende Clubausrüstung</li>
+            <li>Keine Haftung für verlorene, beschädigte oder gestohlene Gegenstände</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">9. Haftungsausschluss und Gesundheit</h3>
+          <p class="text-sm mb-3">Teilnehmer erklären sich selbst als gesundheitlich fit für intensive sportliche Aktivität. The Racket School und Nice Racket Club übernehmen keine Haftung für:</p>
+          <ul class="text-sm space-y-2 list-disc list-inside mb-3">
+            <li>Sportverletzungen während des Trainings</li>
+            <li>Gesundheitliche Folgen von Überanstrengung</li>
+            <li>Unfälle auf dem Platz oder dem Clubgelände</li>
+          </ul>
+          <p class="text-sm">Die Teilnahme erfolgt auf eigenes Risiko. Teilnehmer mit bestehenden Verletzungen oder Einschränkungen müssen dies bei der Anmeldung angeben.</p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">10. Verhaltensrichtlinien</h3>
+          <p class="text-sm">Alle Teilnehmer verpflichten sich zur Einhaltung der Clubregeln von Nice Racket Club.</p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">11. Kommunikation und WhatsApp</h3>
+          <ul class="text-sm space-y-2 list-disc list-inside">
+            <li>Die primäre Kommunikation erfolgt über WhatsApp</li>
+            <li>Wichtige Updates, Terminänderungen und Absagen werden per WhatsApp mitgeteilt</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">12. Zahlungsdispute und Rechnungsansprüche</h3>
+          <ul class="text-sm space-y-2 list-disc list-inside">
+            <li>Alle Rechnungen müssen innerhalb von 14 Tagen nach Ausstellung bezahlt werden</li>
+            <li>Zahlungsdispute müssen innerhalb von 7 Tagen nach Rechnungsstellung geltend gemacht werden</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">13. Block 2 und Folgeblöcke</h3>
+          <ul class="text-sm space-y-2 list-disc list-inside">
+            <li>Teilnehmer können sich nach Abschluss eines Blocks für Block 2 anmelden</li>
+            <li>Die gleichen Geschäftsbedingungen gelten für alle Folgeblöcke</li>
+            <li>Die Trainerzuordnung für Block 2 wird nach Verfügbarkeit bestätigt</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-white mb-3">14. Änderung der Geschäftsbedingungen</h3>
+          <ul class="text-sm space-y-2 list-disc list-inside">
+            <li>The Racket School behält sich das Recht vor, diese Bedingungen jederzeit zu ändern</li>
+            <li>Änderungen werden mindestens 14 Tage vorher per E-Mail mitgeteilt</li>
+            <li>Fortgesetzte Teilnahme nach Mitteilung gilt als Zustimmung zu neuen Bedingungen</li>
+          </ul>
+        </div>
+
+        <div class="border-t border-white/10 pt-8 mt-8">
+          <p class="text-sm text-slate-400"><strong>Mit der Anmeldung akzeptieren Sie alle vorstehenden Geschäftsbedingungen.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
-  <section class="py-16 px-6 border-t border-white/10">
+  <section id="kontakt" class="py-16 px-6 border-t border-white/10">
     <div class="max-w-6xl mx-auto">
       <div class="grid md:grid-cols-3 gap-12 mb-12">
         <!-- Left: Brand -->
@@ -413,7 +596,9 @@
         <!-- Center: Links -->
         <div class="text-center">
           <h4 class="font-bold text-white mb-4">Kontakt</h4>
-          <a href="https://wa.me/4915255191566" target="_blank" class="block text-orange hover:text-orange-dark transition mb-3">WhatsApp</a>
+          <a href="tel:+4915255191566" class="block text-orange hover:text-orange-dark transition mb-3 font-semibold">+49 152 55191566</a>
+          <a href="mailto:theracketschool@gmail.com" class="block text-orange hover:text-orange-dark transition mb-3 font-semibold">theracketschool@gmail.com</a>
+          <a href="https://wa.me/4915255191566" target="_blank" class="block text-slate-400 hover:text-orange transition mb-3">WhatsApp</a>
           <a href="https://instagram.com/racket_school" target="_blank" class="block text-slate-400 hover:text-orange transition mb-3">@racket_school</a>
           <a href="https://instagram.com/nice_racket_club" target="_blank" class="block text-slate-400 hover:text-orange transition">@nice_racket_club</a>
         </div>
@@ -456,7 +641,7 @@
                   subtitle: 'START RALLY',
                   level: 'Spielst erst seit ein paar Mal, keine richtige Technik noch',
                   time: '12:30–14:00',
-                  price: 266,
+                  price: 270,
                   perSession: 38,
                   maxPlayers: 4,
                   dayOfWeek: 'Samstag',
@@ -477,7 +662,7 @@
                   subtitle: 'COURT CLUB',
                   level: 'Spielst regelmäßig, kennst das Spiel, willst dich gezielt verbessern',
                   time: '14:00–15:30',
-                  price: 266,
+                  price: 270,
                   perSession: 38,
                   maxPlayers: 4,
                   dayOfWeek: 'Samstag',
@@ -525,7 +710,7 @@
                   subtitle: 'START RALLY',
                   level: 'Spielst erst seit ein paar Mal, keine richtige Technik noch',
                   time: '17:00–18:30',
-                  price: 266,
+                  price: 270,
                   perSession: 38,
                   maxPlayers: 4,
                   dayOfWeek: 'Mittwoch',
@@ -546,7 +731,7 @@
                   subtitle: 'COURT CLUB',
                   level: 'Spielst regelmäßig, kennst das Spiel, willst dich gezielt verbessern',
                   time: '18:30–20:00',
-                  price: 266,
+                  price: 270,
                   perSession: 38,
                   maxPlayers: 4,
                   dayOfWeek: 'Mittwoch',
@@ -573,7 +758,7 @@
                   subtitle: 'START RALLY',
                   level: 'Spielst erst seit ein paar Mal, keine richtige Technik noch',
                   time: '18:00–19:30',
-                  price: 266,
+                  price: 270,
                   perSession: 38,
                   maxPlayers: 4,
                   dayOfWeek: 'Donnerstag',
@@ -716,7 +901,7 @@
                 ${group.highlights.map(h => `<li class="flex gap-3"><span class="text-orange font-bold">✓</span>${h}</li>`).join('')}
               </ul>
               ${group.maxPlayers === 3 ? '<p class="text-xs text-orange/60 text-center mb-4">Kleinere Gruppe → intensiveres Coaching & mehr Court-Zeit</p>' : ''}
-              <a href="#registrationForm" class="btn-primary w-full py-3.5 rounded-xl font-bold text-center">Jetzt anmelden</a>
+              <a href="https://forms.gle/2B6ZQGfipJiquKKn8" target="_blank" class="btn-primary w-full py-3.5 rounded-xl font-bold text-center">Jetzt anmelden</a>
             </div>
           `;
         });
