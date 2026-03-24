@@ -125,8 +125,10 @@
   <!-- HERO -->
   <section class="hero-bg py-32 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <div class="mb-12">
-        <img src="./logo.png" alt="The Racket School" class="h-64 w-auto mx-auto">
+      <div class="mb-12 flex items-center justify-center gap-6">
+        <img src="./logo.png" alt="The Racket School" class="h-64 w-auto">
+        <div class="text-2xl text-slate-600">×</div>
+        <img src="./nice-racket-club-logo.png" alt="Nice Racket Club" class="h-24 w-auto">
       </div>
       <div class="mb-6 inline-block">
         <span class="pill px-4 py-2 rounded-full text-sm" id="heroOffer">7 Sessions / Block</span>
@@ -356,54 +358,28 @@
     </div>
   </section>
 
-  <!-- INSTAGRAM FEED -->
+  <!-- INSTAGRAM FOLLOW -->
   <section class="py-24 px-6" style="background:var(--black)">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-4 text-center">Folg uns auf Instagram</h2>
       <p class="text-lg text-slate-400 text-center mb-16">Tipps, Training & Community</p>
 
       <div class="grid md:grid-cols-2 gap-8">
-        <!-- Racket School Feed -->
-        <div class="card-dark rounded-2xl overflow-hidden border border-white/10">
-          <div class="p-6 border-b border-white/10">
-            <a href="https://instagram.com/racket_school" target="_blank" class="flex items-center gap-3 hover:opacity-80 transition">
-              <div class="w-12 h-12 bg-orange rounded-full flex items-center justify-center font-bold text-white">RS</div>
-              <div>
-                <p class="font-bold text-white">@racket_school</p>
-                <p class="text-xs text-slate-400">The Racket School</p>
-              </div>
-              <span class="ml-auto text-orange">→</span>
-            </a>
-          </div>
-          <div class="aspect-square bg-gradient-to-br from-orange/10 to-navy/10 flex items-center justify-center text-center p-6">
-            <div>
-              <p class="text-3xl mb-2">📸</p>
-              <p class="text-slate-400 text-sm">Padel Training, Tipps & Court-Leben</p>
-              <a href="https://instagram.com/racket_school" target="_blank" class="text-orange hover:opacity-80 transition text-sm font-semibold mt-3 inline-block">Besuchen →</a>
-            </div>
-          </div>
-        </div>
+        <!-- Racket School -->
+        <a href="https://instagram.com/racket_school" target="_blank" class="card-dark rounded-2xl p-8 text-center border border-white/10 hover:border-orange/50 transition">
+          <p class="text-2xl mb-2">📸</p>
+          <p class="font-bold text-white mb-1">@racket_school</p>
+          <p class="text-sm text-slate-400 mb-4">Padel Training, Tipps & Court-Leben</p>
+          <p class="text-orange font-semibold">Besuchen →</p>
+        </a>
 
-        <!-- Nice Racket Club Feed -->
-        <div class="card-dark rounded-2xl overflow-hidden border border-white/10">
-          <div class="p-6 border-b border-white/10">
-            <a href="https://instagram.com/nice_racket_club" target="_blank" class="flex items-center gap-3 hover:opacity-80 transition">
-              <div class="w-12 h-12 bg-navy rounded-full flex items-center justify-center font-bold text-white">NRC</div>
-              <div>
-                <p class="font-bold text-white">@nice_racket_club</p>
-                <p class="text-xs text-slate-400">Nice Racket Club</p>
-              </div>
-              <span class="ml-auto text-orange">→</span>
-            </a>
-          </div>
-          <div class="aspect-square bg-gradient-to-br from-orange/10 to-navy/10 flex items-center justify-center text-center p-6">
-            <div>
-              <p class="text-3xl mb-2">🎾</p>
-              <p class="text-slate-400 text-sm">Events, Community & Court Updates</p>
-              <a href="https://instagram.com/nice_racket_club" target="_blank" class="text-orange hover:opacity-80 transition text-sm font-semibold mt-3 inline-block">Besuchen →</a>
-            </div>
-          </div>
-        </div>
+        <!-- Nice Racket Club -->
+        <a href="https://instagram.com/nice_racket_club" target="_blank" class="card-dark rounded-2xl p-8 text-center border border-white/10 hover:border-orange/50 transition">
+          <p class="text-2xl mb-2">🎾</p>
+          <p class="font-bold text-white mb-1">@nice_racket_club</p>
+          <p class="text-sm text-slate-400 mb-4">Events, Community & Court Updates</p>
+          <p class="text-orange font-semibold">Besuchen →</p>
+        </a>
       </div>
     </div>
   </section>
@@ -430,10 +406,8 @@
           <h4 class="font-bold text-white mb-4">The Racket School</h4>
           <p class="text-sm text-slate-400 mb-4">Padel Training</p>
           <p class="text-sm text-slate-500 mb-6">Römerstraße 76<br>73066 Uhingen</p>
-          <div class="flex items-center gap-3 justify-center md:justify-start">
-            <img src="./nice-racket-club-logo.png" alt="Nice Racket Club" class="h-10 w-auto">
-            <span class="text-xs text-slate-600">Official Partner</span>
-          </div>
+          <p class="text-xs text-slate-600 mb-3">✓ Official Partner of</p>
+          <img src="./nice-racket-club-logo.png" alt="Nice Racket Club" class="h-12 w-auto">
         </div>
 
         <!-- Center: Links -->
