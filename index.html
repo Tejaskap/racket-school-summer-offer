@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Padel Sommer Kurs 2026 | The Racket School</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+
+    :root {
+      --orange: #F97316;
+      --orange-dark: #ea6500;
+      --navy: #1B2D5B;
+      --navy-light: #243d7a;
+      --black: #0a0a0a;
+      --surface: #111827;
+      --surface2: #1a2535;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: #f1f5f9; }
+
+    .text-orange { color: var(--orange); }
+    .bg-orange { background-color: var(--orange); }
+    .border-orange { border-color: var(--orange); }
+    .text-navy { color: var(--navy); }
+    .bg-navy { background-color: var(--navy); }
+
+    .hero-bg {
+      background:
+        radial-gradient(circle at top left, rgba(249,115,22,0.1), transparent 40%),
+        radial-gradient(circle at bottom right, rgba(27,45,91,0.4), transparent 50%),
+        var(--black);
+    }
+
+    .card-dark {
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .card-hover {
+      transition: all 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(249,115,22,0.3);
+    }
+
+    .pill {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(241,245,249,0.7);
+    }
+
+    .btn-primary {
+      background: var(--orange);
+      color: white;
+      transition: all 0.2s ease;
+      box-shadow: 0 10px 24px rgba(249,115,22,0.3);
+    }
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .dark-panel {
+      background: linear-gradient(135deg, #0a0f1e, #111827);
+    }
+
+    .orange-glow {
+      box-shadow: 0 0 40px rgba(249,115,22,0.15);
+    }
+
+    .navy-surface {
+      background: var(--navy);
+    }
+
+    .fine-grid {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .pricing-featured {
+      background: linear-gradient(160deg, var(--navy) 0%, #0f1e3d 100%);
+      border: 1px solid rgba(249,115,22,0.4) !important;
+      box-shadow: 0 16px 42px rgba(249,115,22,0.15);
+    }
+
+    .section-surface {
+      background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
+    }
+
+    @media (max-width: 768px) {
+      .hero-text { font-size: 2rem; line-height: 2.4rem; }
+    }
+
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+    .float-anim { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 backdrop-blur-md bg-black/40 border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
+      <img src="./logo.png" alt="The Racket School" class="h-12 w-auto">
+      <a href="#pricing" class="text-sm font-semibold text-orange hover:opacity-80 transition">Zur Anmeldung</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg py-32 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <div class="mb-12">
+        <img src="./logo.png" alt="The Racket School" class="h-64 w-auto mx-auto">
+      </div>
+      <div class="mb-6 inline-block">
+        <span class="pill px-4 py-2 rounded-full text-sm" id="heroOffer">7 Sessions / Block</span>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+        Padel
+        <span class="text-orange">lernen</span>
+        <br />
+        wie du wirklich willst
+      </h1>
+      <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Feste Gruppen, feste Spieler, echte Fortschritte. Keine Vollbuchung. Keine Improvisation. Dein Weg zu neuem Spielniveau — jeden Tag der Woche.
+      </p>
+      <a href="#pricing" class="btn-primary px-8 py-4 rounded-xl font-bold text-lg text-center inline-block">Jetzt anmelden</a>
+    </div>
+  </section>
+
+  <!-- QUICK STATS -->
+  <section class="py-24 px-6 bg-white/2">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-16 text-center">Verfügbare Slots</h2>
+      <div id="quickStats">
+        <!-- Generated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="py-24 px-6 section-surface">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-4">
+          Das Problem mit offenen Sessions
+        </h2>
+        <p class="text-lg text-slate-400">Warum offene Sessions auf Dauer frustrieren</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="card-dark rounded-2xl p-6 flex gap-4">
+          <div class="text-red-400 text-xl flex-shrink-0 mt-0.5">✗</div>
+          <div><p class="font-semibold text-white mb-1">Session buchen wollen</p><p class="text-slate-400 text-sm">...schon ausgebucht. Wieder.</p></div>
+        </div>
+        <div class="card-dark rounded-2xl p-6 flex gap-4">
+          <div class="text-red-400 text-xl flex-shrink-0 mt-0.5">✗</div>
+          <div><p class="font-semibold text-white mb-1">Spieler suchen</p><p class="text-slate-400 text-sm">...jede Woche neu organisieren</p></div>
+        </div>
+        <div class="card-dark rounded-2xl p-6 flex gap-4">
+          <div class="text-red-400 text-xl flex-shrink-0 mt-0.5">✗</div>
+          <div><p class="font-semibold text-white mb-1">Immer andere Leute</p><p class="text-slate-400 text-sm">...keine Chemie, keine Freundschaften</p></div>
+        </div>
+        <div class="card-dark rounded-2xl p-6 flex gap-4">
+          <div class="text-red-400 text-xl flex-shrink-0 mt-0.5">✗</div>
+          <div><p class="font-semibold text-white mb-1">Kein Fortschritt</p><p class="text-slate-400 text-sm">...keine Struktur, keine Kontinuität</p></div>
+        </div>
+        <div class="card-dark rounded-2xl p-6 flex gap-4">
+          <div class="text-red-400 text-xl flex-shrink-0 mt-0.5">✗</div>
+          <div><p class="font-semibold text-white mb-1">Session verpassen</p><p class="text-slate-400 text-sm">...Geld weg, kein Tausch</p></div>
+        </div>
+        <div class="card-dark rounded-2xl p-6 flex gap-4">
+          <div class="text-red-400 text-xl flex-shrink-0 mt-0.5">✗</div>
+          <div><p class="font-semibold text-white mb-1">Keine Gewohnheit</p><p class="text-slate-400 text-sm">...Padel bleibt Hobby, nicht Routine</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="py-24 px-6" style="background:var(--black)">
+    <div class="max-w-5xl mx-auto">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-4">
+          Offene Session vs. Feste Gruppe
+        </h2>
+        <p class="text-lg text-slate-400">Der Unterschied auf einen Blick</p>
+      </div>
+      <div class="card-dark rounded-3xl overflow-hidden">
+        <div class="grid grid-cols-3 border-b border-white/10 bg-white/5">
+          <div class="p-5 text-sm font-semibold text-slate-400 uppercase tracking-wider"></div>
+          <div class="p-5 text-sm font-semibold text-slate-400 uppercase tracking-wider text-center border-l border-white/10">Offene Session</div>
+          <div class="p-5 text-sm font-bold text-orange uppercase tracking-wider text-center border-l border-orange/20 bg-orange/5">Feste Gruppe ✓</div>
+        </div>
+
+        <div class="grid grid-cols-3 border-b border-white/10 hover:bg-white/5 transition">
+          <div class="p-4 text-sm font-medium text-slate-300">Dein Platz ist frei</div>
+          <div class="p-4 text-sm text-slate-500 text-center border-l border-white/10">❌ Oft ausgebucht</div>
+          <div class="p-4 text-sm font-semibold text-orange text-center border-l border-orange/20 bg-orange/5">✓ Garantiert</div>
+        </div>
+        <div class="grid grid-cols-3 border-b border-white/10 hover:bg-white/5 transition">
+          <div class="p-4 text-sm font-medium text-slate-300">Organisation</div>
+          <div class="p-4 text-sm text-slate-500 text-center border-l border-white/10">❌ Deine Aufgabe</div>
+          <div class="p-4 text-sm font-semibold text-orange text-center border-l border-orange/20 bg-orange/5">✓ Alles geplant</div>
+        </div>
+        <div class="grid grid-cols-3 border-b border-white/10 hover:bg-white/5 transition">
+          <div class="p-4 text-sm font-medium text-slate-300">Gleiche Gruppe</div>
+          <div class="p-4 text-sm text-slate-500 text-center border-l border-white/10">❌ Immer andere</div>
+          <div class="p-4 text-sm font-semibold text-orange text-center border-l border-orange/20 bg-orange/5">✓ Jede Woche</div>
+        </div>
+        <div class="grid grid-cols-3 border-b border-white/10 hover:bg-white/5 transition">
+          <div class="p-4 text-sm font-medium text-slate-300">Fortschritt</div>
+          <div class="p-4 text-sm text-slate-500 text-center border-l border-white/10">❌ Keine Struktur</div>
+          <div class="p-4 text-sm font-semibold text-orange text-center border-l border-orange/20 bg-orange/5">✓ Tracking</div>
+        </div>
+        <div class="grid grid-cols-3 border-b border-white/10 hover:bg-white/5 transition">
+          <div class="p-4 text-sm font-medium text-slate-300">Session verpassen</div>
+          <div class="p-4 text-sm text-slate-500 text-center border-l border-white/10">❌ Geld weg</div>
+          <div class="p-4 text-sm font-semibold text-orange text-center border-l border-orange/20 bg-orange/5">✓ Tausch möglich</div>
+        </div>
+        <div class="grid grid-cols-3 border-b border-white/10 hover:bg-white/5 transition">
+          <div class="p-4 text-sm font-medium text-slate-300">Alle Termine vorab</div>
+          <div class="p-4 text-sm text-slate-500 text-center border-l border-white/10">❌ Nein</div>
+          <div class="p-4 text-sm font-semibold text-orange text-center border-l border-orange/20 bg-orange/5">✓ Ja</div>
+        </div>
+        <div class="grid grid-cols-3 border-b border-white/10 hover:bg-white/5 transition">
+          <div class="p-4 text-sm font-medium text-slate-300">Routine</div>
+          <div class="p-4 text-sm text-slate-500 text-center border-l border-white/10">❌ Schwierig aufzubauen</div>
+          <div class="p-4 text-sm font-semibold text-orange text-center border-l border-orange/20 bg-orange/5">✓ Feste Routine, mehr als nur Samstag möglich</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING CARDS -->
+  <section id="pricing" class="py-24 px-6" style="background:var(--black)">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-16 text-center">
+        Deine Padel-Gruppe
+      </h2>
+
+      <!-- Dynamic pricing cards will be generated here -->
+      <div id="pricingCards">
+        <!-- Generated by JavaScript -->
+      </div>
+
+      <!-- Trial session CTA -->
+      <div class="mt-16 card-dark rounded-3xl p-8 md:p-10 text-center border border-white/10">
+        <p class="text-2xl font-bold text-white mb-3">🤔 Nicht sicher, welche Gruppe passt?</p>
+        <p class="text-slate-400 mb-2 max-w-xl mx-auto">Kein Problem — buche dir eine Probestunde. Wir schauen gemeinsam, wo du am besten aufgehoben bist.</p>
+        <p class="text-sm text-slate-500 mb-6 max-w-xl mx-auto">Die Probestunde ist buchbar und kostenpflichtig — so bekommst du direkt echtes Coaching und eine fundierte Einschätzung.</p>
+        <a href="https://wa.me/4915255191566" target="_blank" class="inline-block bg-white/10 hover:bg-white/15 transition text-white font-bold px-8 py-3.5 rounded-xl">Probestunde buchen →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INCLUDED -->
+  <section class="py-24 px-6 section-surface">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-4">Was alles inklusive ist</h2>
+        <p class="text-lg text-slate-400">Alles drin — keine versteckten Kosten</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-8">
+        <div class="card-dark card-hover rounded-2xl p-6"><p class="text-lg font-bold text-white mb-2"><span class="text-orange">✓</span> Platz & Schläger</p><p class="text-slate-400 text-sm">Einfach ankommen. Alles ist da.</p></div>
+        <div class="card-dark card-hover rounded-2xl p-6"><p class="text-lg font-bold text-white mb-2"><span class="text-orange">✓</span> Voller Kursplan</p><p class="text-slate-400 text-sm">Alle Termine vorab — einmal eintragen, fertig.</p></div>
+        <div class="card-dark card-hover rounded-2xl p-6"><p class="text-lg font-bold text-white mb-2"><span class="text-orange">✓</span> Tausch-System</p><p class="text-slate-400 text-sm">Termin verpasst? Du organisierst selbst einen Tausch mit einem Spieler deines Levels über die WhatsApp-Gruppe — wenn ein Platz frei ist.</p></div>
+        <div class="card-dark card-hover rounded-2xl p-6"><p class="text-lg font-bold text-white mb-2"><span class="text-orange">✓</span> Fortschritts-Tracking</p><p class="text-slate-400 text-sm">Dein Coach verfolgt deine Entwicklung jede einzelne Session.</p></div>
+        <div class="card-dark card-hover rounded-2xl p-6"><p class="text-lg font-bold text-white mb-2"><span class="text-orange">✓</span> WhatsApp Support</p><p class="text-slate-400 text-sm">Reminder, Tipps und Kontakt zwischen den Sessions.</p></div>
+        <div class="card-dark card-hover rounded-2xl p-6"><p class="text-lg font-bold text-white mb-2"><span class="text-orange">✓</span> Block 2 Priorität</p><p class="text-slate-400 text-sm">Bestehende Spieler buchen zuerst — bevor es öffentlich wird.</p></div>
+        <div class="card-dark card-hover rounded-2xl p-6"><p class="text-lg font-bold text-white mb-2"><span class="text-orange">✓</span> Keine versteckten Kosten</p><p class="text-slate-400 text-sm">Ein Preis. Alles inklusive. Fertig.</p></div>
+      </div>
+
+      <!-- Trainer flexibility note -->
+      <div class="mt-10 card-dark rounded-3xl p-8 md:p-10 border border-white/10">
+        <div class="flex gap-4 items-start">
+          <span class="text-2xl">⚠️</span>
+          <div>
+            <p class="text-lg font-bold text-white mb-3">Falls die Trainerin/Trainer ausfällt</p>
+            <p class="text-slate-400 text-sm mb-3">Du bezahlst für Court + Coaching. Wenn wir keine Trainerin/Trainer stellen können, passiert das:</p>
+            <ul class="text-sm text-slate-300 space-y-2 mb-4">
+              <li>✓ Die Halle bleibt für deine Gruppe geöffnet — ihr könnt spielen</li>
+              <li>✓ Du erhältst den <span class="font-semibold text-orange">Coaching-Preis zurück</span> (nicht den Court-Preis, die Halle bleibt gebucht)</li>
+              <li>✓ Falls auch die Halle ausfällt: <span class="font-semibold text-orange">Neuer Termin</span> wird automatisch mit dir abgestimmt</li>
+            </ul>
+            <p class="text-xs text-slate-500">Trainerin/Trainer-Änderungen sind möglich — bei Bedarf teilen wir das mit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="py-24 px-6" style="background:var(--black)">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-16 text-center">Der Kursplan</h2>
+
+      <!-- Dynamic schedule will be generated here -->
+      <div id="schedule">
+        <!-- Generated by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTRATION FORM -->
+  <section id="registrationForm" class="py-24 px-6 section-surface">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-4">Jetzt anmelden</h2>
+        <p class="text-lg text-slate-400">Wähle deine Gruppe und dein Level. Plätze sind begrenzt!</p>
+      </div>
+
+      <!-- Google Form embed -->
+      <div class="bg-white/5 rounded-2xl p-8 border border-white/10">
+        <p class="text-slate-400 text-center mb-4">Google Form wird hier eingebettet. Link: <a href="#" class="text-orange hover:opacity-80" id="formLink">Hier klicken</a></p>
+        <div id="formContainer"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="py-12 px-6 border-t border-white/10">
+    <div class="max-w-6xl mx-auto text-center">
+      <p class="text-slate-400 mb-4">The Racket School × Nice Racket Club</p>
+      <p class="text-xs text-slate-600">Römerstraße 76, 73066 Uhingen · <a href="https://instagram.com/racket_school" class="text-orange hover:opacity-80">@racket_school</a> · <a href="https://instagram.com/nice_racket_club" class="text-orange hover:opacity-80">@nice_racket_club</a></p>
+    </div>
+  </section>
+
+  <script>
+    // ========================================
+    // FLEXIBLE DATA STRUCTURE - SUPPORTS MULTIPLE DAYS, TRAINERS & BLOCKS
+    // ========================================
+
+    const courseData = {
+      blocks: [
+        {
+          id: 'block1',
+          name: 'Block 1',
+          startDate: '02. Mai 2026',
+          description: 'Mai & Juni 2026',
+          sessions: 7,
+          days: [
+            {
+              dayName: 'Samstag',
+              trainer: 'TJ',
+              sessions: [
+                {
+                  id: 'sat-anfaenger',
+                  name: 'Anfänger',
+                  subtitle: 'START RALLY',
+                  level: 'Spielst erst seit ein paar Mal, keine richtige Technik noch',
+                  time: '12:30–14:00',
+                  price: 266,
+                  perSession: 38,
+                  maxPlayers: 4,
+                  dayOfWeek: 'Samstag',
+                  trainer: 'TJ',
+                  highlights: [
+                    '7 feste Sessions',
+                    'Basis-Technik & Grundlagen',
+                    'Gleiche Gruppe jede Woche',
+                    'Max. 4 Spieler',
+                    'Tausch-Option',
+                    'WhatsApp-Gruppe'
+                  ],
+                  featured: false
+                },
+                {
+                  id: 'sat-amateure',
+                  name: 'Amateure',
+                  subtitle: 'COURT CLUB',
+                  level: 'Spielst regelmäßig, kennst das Spiel, willst dich gezielt verbessern',
+                  time: '14:00–15:30',
+                  price: 266,
+                  perSession: 38,
+                  maxPlayers: 4,
+                  dayOfWeek: 'Samstag',
+                  trainer: 'TJ',
+                  highlights: [
+                    '7 feste Sessions',
+                    'Taktik & Matchplay-Fokus',
+                    'Gleiche Gruppe jede Woche',
+                    'Max. 4 Spieler',
+                    'Tausch-Option',
+                    'WhatsApp-Gruppe'
+                  ],
+                  featured: true
+                },
+                {
+                  id: 'sat-fortgeschrittene',
+                  name: 'Fortgeschrittene',
+                  subtitle: 'PERFORMANCE CLUB',
+                  level: 'Spielst Matches regelmäßig, willst auf höherem Niveau trainieren',
+                  time: '15:30–17:00',
+                  price: 350,
+                  perSession: 50,
+                  maxPlayers: 3,
+                  dayOfWeek: 'Samstag',
+                  trainer: 'TJ',
+                  highlights: [
+                    '7 feste Sessions',
+                    'Nur 3 Spieler — mehr Court-Zeit',
+                    'Taktik & Wettkampf-Fokus',
+                    'Intensives Coaching',
+                    'Tausch-Option',
+                    'WhatsApp-Gruppe'
+                  ],
+                  featured: false
+                }
+              ]
+            },
+            {
+              dayName: 'Mittwoch',
+              trainer: 'Leonie',
+              sessions: [
+                {
+                  id: 'wed-anfaenger',
+                  name: 'Anfänger',
+                  subtitle: 'START RALLY',
+                  level: 'Spielst erst seit ein paar Mal, keine richtige Technik noch',
+                  time: '17:00–18:30',
+                  price: 266,
+                  perSession: 38,
+                  maxPlayers: 4,
+                  dayOfWeek: 'Mittwoch',
+                  trainer: 'Leonie',
+                  highlights: [
+                    '7 feste Sessions',
+                    'Basis-Technik & Grundlagen',
+                    'Gleiche Gruppe jede Woche',
+                    'Max. 4 Spieler',
+                    'Tausch-Option',
+                    'WhatsApp-Gruppe'
+                  ],
+                  featured: false
+                },
+                {
+                  id: 'wed-amateure',
+                  name: 'Amateure',
+                  subtitle: 'COURT CLUB',
+                  level: 'Spielst regelmäßig, kennst das Spiel, willst dich gezielt verbessern',
+                  time: '18:30–20:00',
+                  price: 266,
+                  perSession: 38,
+                  maxPlayers: 4,
+                  dayOfWeek: 'Mittwoch',
+                  trainer: 'Leonie',
+                  highlights: [
+                    '7 feste Sessions',
+                    'Taktik & Matchplay-Fokus',
+                    'Gleiche Gruppe jede Woche',
+                    'Max. 4 Spieler',
+                    'Tausch-Option',
+                    'WhatsApp-Gruppe'
+                  ],
+                  featured: false
+                }
+              ]
+            },
+            {
+              dayName: 'Donnerstag',
+              trainer: 'Leonie',
+              sessions: [
+                {
+                  id: 'thu-anfaenger',
+                  name: 'Anfänger',
+                  subtitle: 'START RALLY',
+                  level: 'Spielst erst seit ein paar Mal, keine richtige Technik noch',
+                  time: '18:00–19:30',
+                  price: 266,
+                  perSession: 38,
+                  maxPlayers: 4,
+                  dayOfWeek: 'Donnerstag',
+                  trainer: 'Leonie',
+                  highlights: [
+                    '7 feste Sessions',
+                    'Basis-Technik & Grundlagen',
+                    'Gleiche Gruppe jede Woche',
+                    'Max. 4 Spieler',
+                    'Tausch-Option',
+                    'WhatsApp-Gruppe'
+                  ],
+                  featured: false
+                },
+                {
+                  id: 'thu-fortgeschrittene',
+                  name: 'Fortgeschrittene',
+                  subtitle: 'PERFORMANCE CLUB',
+                  level: 'Spielst Matches regelmäßig, willst auf höherem Niveau trainieren',
+                  time: '19:30–21:00',
+                  price: 350,
+                  perSession: 50,
+                  maxPlayers: 3,
+                  dayOfWeek: 'Donnerstag',
+                  trainer: 'Leonie',
+                  highlights: [
+                    '7 feste Sessions',
+                    'Nur 3 Spieler — mehr Court-Zeit',
+                    'Taktik & Wettkampf-Fokus',
+                    'Intensives Coaching',
+                    'Tausch-Option',
+                    'WhatsApp-Gruppe'
+                  ],
+                  featured: false
+                }
+              ]
+            }
+          ],
+          schedules: {
+            wednesday: [
+              '29. April', '06. Mai', '13. Mai', '20. Mai',
+              '10. Juni', '17. Juni', '24. Juni'
+            ],
+            thursday: [
+              '30. April', '07. Mai', '14. Mai', '21. Mai',
+              '11. Juni', '18. Juni', '25. Juni'
+            ],
+            saturday: [
+              '02. Mai', '09. Mai', '16. Mai', '23. Mai',
+              '13. Juni', '20. Juni', '27. Juni'
+            ]
+          }
+        }
+      ]
+    };
+
+    // ========================================
+    // RENDER QUICK STATS
+    // ========================================
+    function renderQuickStats() {
+      const block = courseData.blocks[0];
+      const container = document.getElementById('quickStats');
+      let html = '';
+
+      // Order: Wednesday, Thursday, Saturday
+      const dayOrder = ['Mittwoch', 'Donnerstag', 'Samstag'];
+      const sortedDays = dayOrder.map(dayName =>
+        block.days.find(d => d.dayName === dayName)
+      );
+
+      sortedDays.forEach((day, dayIndex) => {
+        html += `<div class="mb-12">`;
+        html += `<h3 class="text-4xl font-bold text-white mb-4">${day.dayName}</h3>`;
+        html += `<div class="grid md:grid-cols-2 gap-4">`;
+
+        day.sessions.forEach(session => {
+          html += `
+            <div class="card-dark rounded-2xl p-5 text-center">
+              <p class="text-sm font-semibold text-orange mb-2">${session.subtitle}</p>
+              <p class="text-lg font-bold text-white mb-2">${session.time}</p>
+              <p class="text-xs text-slate-500">Max. ${session.maxPlayers} Spieler</p>
+            </div>
+          `;
+        });
+
+        html += `</div>`;
+        if (dayIndex < sortedDays.length - 1) {
+          html += `<div class="my-8 h-px bg-white/10"></div>`;
+        }
+        html += `</div>`;
+      });
+
+      container.innerHTML = html;
+    }
+
+    // ========================================
+    // RENDER PRICING CARDS
+    // ========================================
+    function renderPricingCards() {
+      const block = courseData.blocks[0];
+      const container = document.getElementById('pricingCards');
+
+      // Order: Wednesday, Thursday, Saturday
+      const dayOrder = ['Mittwoch', 'Donnerstag', 'Samstag'];
+      const sortedDays = dayOrder.map(dayName =>
+        block.days.find(d => d.dayName === dayName)
+      );
+
+      let html = '';
+
+      sortedDays.forEach((day, dayIndex) => {
+        // Always use 3 columns for consistency, even if day has fewer sessions
+        const gridClass = 'md:grid-cols-3';
+
+        html += `
+          <div class="mb-12">
+            <h3 class="text-4xl font-extrabold text-white mb-6">${day.dayName}</h3>
+            <div class="grid ${gridClass} gap-8">
+        `;
+
+        day.sessions.forEach(group => {
+          html += `
+            <div class="pricing-featured card-hover rounded-3xl p-8 flex flex-col relative">
+              <div class="mb-6 pb-6 border-b border-white/10">
+                <h3 class="text-2xl font-bold text-white mb-1">${group.subtitle}</h3>
+                <p class="text-slate-200 mb-1 text-sm font-semibold">${group.name} · ${group.time}</p>
+                <p class="text-xs text-orange/70 mb-3 font-medium">Trainer: ${group.trainer}</p>
+                <div class="bg-white/5 rounded-lg p-3 mb-3">
+                  <p class="text-xs text-slate-400 mb-1">FÜR DIESES LEVEL:</p>
+                  <p class="text-sm font-semibold text-orange">${group.level}</p>
+                </div>
+                <div class="bg-white/5 rounded-lg p-3">
+                  <p class="text-xs text-slate-400 mb-1">GRUPPENGRÖSSE:</p>
+                  <p class="text-sm font-semibold text-orange">Max. ${group.maxPlayers} Spieler</p>
+                </div>
+              </div>
+              <p class="text-5xl font-extrabold text-white mb-2">€${group.price}</p>
+              <p class="text-sm text-slate-300 mb-8">${block.sessions} Sessions · 1 Block · €${group.perSession}/Session</p>
+              <ul class="space-y-3 mb-8 flex-grow text-sm text-slate-200">
+                ${group.highlights.map(h => `<li class="flex gap-3"><span class="text-orange font-bold">✓</span>${h}</li>`).join('')}
+              </ul>
+              ${group.maxPlayers === 3 ? '<p class="text-xs text-orange/60 text-center mb-4">Kleinere Gruppe → intensiveres Coaching & mehr Court-Zeit</p>' : ''}
+              <a href="#registrationForm" class="btn-primary w-full py-3.5 rounded-xl font-bold text-center">Jetzt anmelden</a>
+            </div>
+          `;
+        });
+
+        html += `</div></div>`;
+
+        if (dayIndex < sortedDays.length - 1) {
+          html += `<div class="my-8 h-px bg-white/10"></div>`;
+        }
+      });
+
+      container.innerHTML = html;
+    }
+
+    // ========================================
+    // RENDER SCHEDULE
+    // ========================================
+    function renderSchedule() {
+      const block = courseData.blocks[0];
+      const scheduleContainer = document.getElementById('schedule');
+
+      let html = '';
+
+      // Day order: Wednesday, Thursday, Saturday
+      const dayOrder = [
+        { dayName: 'Mittwoch', key: 'wednesday' },
+        { dayName: 'Donnerstag', key: 'thursday' },
+        { dayName: 'Samstag', key: 'saturday' }
+      ];
+
+      dayOrder.forEach((dayInfo, dayIndex) => {
+        const dates = block.schedules[dayInfo.key];
+        const dayData = block.days.find(d => d.dayName === dayInfo.dayName);
+
+        html += `<div class="mb-12">`;
+        html += `<div class="flex items-center gap-3 mb-6">`;
+        html += `<h3 class="text-4xl font-bold text-white">${dayInfo.dayName}</h3>`;
+        html += `<span class="px-3 py-1 bg-orange/20 border border-orange/30 rounded-full text-xs font-semibold text-orange">Trainer: ${dayData.trainer}</span>`;
+        html += `<span class="text-xs text-slate-500 ml-auto">*Trainer können sich ändern</span>`;
+        html += `</div>`;
+
+        // Session times with dates
+        dayData.sessions.forEach(session => {
+          html += `
+            <div class="card-dark rounded-2xl p-6 border border-white/10 mb-6">
+              <div class="flex items-start justify-between mb-4">
+                <div>
+                  <p class="text-sm font-semibold text-orange mb-1">${session.subtitle}</p>
+                  <p class="text-lg font-bold text-white">${session.time}</p>
+                  <p class="text-xs text-slate-400 mt-1">${session.name} · Max. ${session.maxPlayers} Spieler</p>
+                </div>
+              </div>
+              <div class="border-t border-white/10 pt-4">
+                <p class="text-xs text-slate-500 mb-3 font-semibold">Termine (7 Sessions):</p>
+                <div class="grid md:grid-cols-4 lg:grid-cols-7 gap-2">
+                  ${dates.map((date, index) => `
+                    <div class="card-dark rounded-lg p-2 text-center text-xs border border-white/5">
+                      <p class="text-slate-500 mb-0.5 text-xs">S${index + 1}</p>
+                      <p class="font-bold text-white text-xs">${date}</p>
+                    </div>
+                  `).join('')}
+                </div>
+              </div>
+            </div>
+          `;
+        });
+
+        html += `</div>`;
+
+        if (dayIndex < dayOrder.length - 1) {
+          html += `<div class="my-8 h-px bg-white/10"></div>`;
+        }
+      });
+
+      scheduleContainer.innerHTML = html;
+    }
+
+    // ========================================
+    // INITIALIZE
+    // ========================================
+    document.addEventListener('DOMContentLoaded', () => {
+      renderQuickStats();
+      renderPricingCards();
+      renderSchedule();
+    });
+  </script>
+
+</body>
+</html>

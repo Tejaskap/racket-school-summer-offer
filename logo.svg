@@ -1,0 +1,75 @@
+<svg viewBox="0 0 240 280" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left Paddle (Pickleball) -->
+  <g>
+    <circle cx="60" cy="100" r="50" fill="#1B2D5B"/>
+    <!-- White dots pattern -->
+    <circle cx="40" cy="80" r="4" fill="white"/>
+    <circle cx="55" cy="80" r="4" fill="white"/>
+    <circle cx="70" cy="80" r="4" fill="white"/>
+    <circle cx="85" cy="80" r="4" fill="white"/>
+
+    <circle cx="33" cy="95" r="4" fill="white"/>
+    <circle cx="48" cy="95" r="4" fill="white"/>
+    <circle cx="63" cy="95" r="4" fill="white"/>
+    <circle cx="78" cy="95" r="4" fill="white"/>
+    <circle cx="93" cy="95" r="4" fill="white"/>
+
+    <circle cx="40" cy="110" r="4" fill="white"/>
+    <circle cx="55" cy="110" r="4" fill="white"/>
+    <circle cx="70" cy="110" r="4" fill="white"/>
+    <circle cx="85" cy="110" r="4" fill="white"/>
+
+    <circle cx="48" cy="125" r="4" fill="white"/>
+    <circle cx="63" cy="125" r="4" fill="white"/>
+    <circle cx="78" cy="125" r="4" fill="white"/>
+
+    <!-- Handle -->
+    <rect x="52" y="145" width="16" height="60" rx="8" fill="#1B2D5B"/>
+  </g>
+
+  <!-- Center Tennis Racket -->
+  <g>
+    <!-- Racket head (oval) -->
+    <ellipse cx="120" cy="60" rx="40" ry="50" fill="none" stroke="#1B2D5B" stroke-width="6"/>
+
+    <!-- String pattern -->
+    <!-- Horizontal lines -->
+    <line x1="80" y1="25" x2="160" y2="25" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="78" y1="35" x2="162" y2="35" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="77" y1="45" x2="163" y2="45" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="78" y1="55" x2="162" y2="55" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="80" y1="65" x2="160" y2="65" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="85" y1="75" x2="155" y2="75" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="95" y1="85" x2="145" y2="85" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="100" y1="90" x2="140" y2="90" stroke="#1B2D5B" stroke-width="1.5"/>
+
+    <!-- Vertical lines -->
+    <line x1="92" y1="20" x2="92" y2="100" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="102" y1="18" x2="102" y2="102" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="112" y1="17" x2="112" y2="103" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="122" y1="17" x2="122" y2="103" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="132" y1="18" x2="132" y2="102" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="142" y1="20" x2="142" y2="100" stroke="#1B2D5B" stroke-width="1.5"/>
+    <line x1="148" y1="25" x2="148" y2="95" stroke="#1B2D5B" stroke-width="1.5"/>
+
+    <!-- Handle -->
+    <rect x="110" y="105" width="20" height="70" rx="4" fill="#1B2D5B"/>
+  </g>
+
+  <!-- Right Paddle (Padel) -->
+  <g>
+    <ellipse cx="190" cy="95" rx="42" ry="55" fill="#1B2D5B"/>
+    <!-- Handle -->
+    <rect x="180" y="145" width="20" height="60" rx="5" fill="#1B2D5B"/>
+  </g>
+
+  <!-- Ball at bottom -->
+  <g>
+    <circle cx="120" cy="220" r="18" fill="white" stroke="#1B2D5B" stroke-width="2"/>
+    <!-- Curved lines on ball -->
+    <path d="M 108 210 Q 120 220 108 230" stroke="#1B2D5B" stroke-width="2" fill="none"/>
+    <path d="M 132 210 Q 120 220 132 230" stroke="#1B2D5B" stroke-width="2" fill="none"/>
+    <!-- Orange accent -->
+    <circle cx="120" cy="210" r="5" fill="#F97316"/>
+  </g>
+</svg>
