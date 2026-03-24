@@ -104,6 +104,11 @@
       background: linear-gradient(135deg, var(--surface2) 0%, var(--surface) 100%);
     }
 
+    @media (max-width: 640px) {
+      .hero-text { font-size: 1.5rem; line-height: 2rem; }
+      body { font-size: 14px; }
+    }
+
     @media (max-width: 768px) {
       .hero-text { font-size: 2rem; line-height: 2.4rem; }
     }
@@ -122,11 +127,19 @@
       right: 0;
       top: calc(100% + 8px);
       background-color: rgba(11, 15, 25, 0.95);
-      min-width: 220px;
+      min-width: 200px;
+      max-width: calc(100vw - 24px);
       box-shadow: 0 8px 16px rgba(0,0,0,0.3);
       z-index: 1000;
       border: 1px solid rgba(249,115,22,0.3);
       border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .dropdown-content {
+        min-width: 180px;
+        right: -6px;
+      }
     }
 
     .dropdown-content.active {
@@ -179,26 +192,26 @@
   </nav>
 
   <!-- HERO -->
-  <section class="hero-bg py-32 px-6">
+  <section class="hero-bg py-16 md:py-32 px-6">
     <div class="max-w-4xl mx-auto text-center">
-      <div class="mb-12 flex items-center justify-center gap-6">
-        <img src="./logo.png" alt="The Racket School" class="h-64 w-auto">
-        <div class="text-2xl text-slate-600">×</div>
-        <img src="./nice-racket-club-logo.png" alt="Nice Racket Club" class="h-24 w-auto">
+      <div class="mb-8 md:mb-12 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+        <img src="./logo.png" alt="The Racket School" class="h-32 sm:h-48 md:h-64 w-auto">
+        <div class="text-xl sm:text-2xl text-slate-600">×</div>
+        <img src="./nice-racket-club-logo.png" alt="Nice Racket Club" class="h-16 sm:h-20 md:h-24 w-auto">
       </div>
       <div class="mb-6 inline-block">
-        <span class="pill px-4 py-2 rounded-full text-sm" id="heroOffer">7 Sessions / Block</span>
+        <span class="pill px-4 py-2 rounded-full text-xs sm:text-sm" id="heroOffer">7 Sessions / Block</span>
       </div>
-      <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
         Padel
         <span class="text-orange">lernen</span>
         <br />
         wie du wirklich willst
       </h1>
-      <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+      <p class="text-base sm:text-lg md:text-xl text-slate-300 mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
         Feste Gruppen, feste Spieler, echte Fortschritte. Keine Vollbuchung. Keine Improvisation. Dein Weg zu neuem Spielniveau — jeden Tag der Woche.
       </p>
-      <a href="https://forms.gle/2B6ZQGfipJiquKKn8" target="_blank" class="btn-primary px-8 py-4 rounded-xl font-bold text-lg text-center inline-block">Jetzt anmelden</a>
+      <a href="https://forms.gle/2B6ZQGfipJiquKKn8" target="_blank" class="btn-primary px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg text-center inline-block">Jetzt anmelden</a>
     </div>
   </section>
 
@@ -399,11 +412,11 @@
   </section>
 
   <!-- REGISTRATION FORM -->
-  <section id="registrationForm" class="py-24 px-6 section-surface">
+  <section id="registrationForm" class="py-16 md:py-24 px-6 section-surface">
     <div class="max-w-4xl mx-auto">
-      <div class="text-center mb-12">
-        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-4">Jetzt anmelden</h2>
-        <p class="text-lg text-slate-400">Wähle deine Gruppe und dein Level. Plätze sind begrenzt!</p>
+      <div class="text-center mb-8 md:mb-12">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-3 md:mb-4">Jetzt anmelden</h2>
+        <p class="text-base sm:text-lg text-slate-400">Wähle deine Gruppe und dein Level. Plätze sind begrenzt!</p>
       </div>
 
       <!-- Google Form embed -->
@@ -415,12 +428,12 @@
   </section>
 
   <!-- INSTAGRAM FOLLOW -->
-  <section id="instagram" class="py-24 px-6" style="background:var(--black)">
+  <section id="instagram" class="py-16 md:py-24 px-6" style="background:var(--black)">
     <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight text-orange mb-4 text-center">Folg uns auf Instagram</h2>
-      <p class="text-lg text-slate-400 text-center mb-16">Tipps, Training & Community</p>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-orange mb-3 md:mb-4 text-center">Folg uns auf Instagram</h2>
+      <p class="text-base sm:text-lg text-slate-400 text-center mb-10 md:mb-16">Tipps, Training & Community</p>
 
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         <!-- Racket School -->
         <a href="https://instagram.com/racket_school" target="_blank" class="card-dark rounded-2xl p-8 text-center border border-white/10 hover:border-orange/50 transition">
           <p class="text-2xl mb-2">📸</p>
@@ -441,11 +454,11 @@
   </section>
 
   <!-- CTA SECTION -->
-  <section class="py-20 px-6 section-surface">
+  <section class="py-12 md:py-20 px-6 section-surface">
     <div class="max-w-6xl mx-auto">
-      <div class="card-dark rounded-3xl p-10 md:p-12 text-center border border-orange/20 bg-gradient-to-br from-orange/5 to-navy/10">
-        <h3 class="text-3xl md:text-4xl font-bold text-white mb-4">Bereit zu starten?</h3>
-        <p class="text-lg text-slate-300 mb-8">Deine Fragen? Fragen? Kontaktier uns direkt über WhatsApp.</p>
+      <div class="card-dark rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 text-center border border-orange/20 bg-gradient-to-br from-orange/5 to-navy/10">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Bereit zu starten?</h3>
+        <p class="text-base sm:text-lg text-slate-300 mb-6 sm:mb-8">Deine Fragen? Kontaktier uns direkt über WhatsApp.</p>
         <a href="https://wa.me/4915255191566" target="_blank" class="inline-block btn-primary font-bold px-16 py-5 rounded-xl text-xl shadow-xl hover:shadow-2xl">
           💬 Jetzt schreiben
         </a>
@@ -454,9 +467,9 @@
   </section>
 
   <!-- TERMS & CONDITIONS -->
-  <section id="terms" class="py-16 px-6 bg-surface2">
+  <section id="terms" class="py-12 md:py-16 px-6 bg-surface2">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl font-bold text-white mb-12 text-center">Geschäftsbedingungen</h2>
+      <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 md:mb-12 text-center">Geschäftsbedingungen</h2>
 
       <div class="space-y-8 text-slate-300">
         <div>
@@ -585,9 +598,9 @@
   </section>
 
   <!-- FOOTER -->
-  <section id="kontakt" class="py-16 px-6 border-t border-white/10">
+  <section id="kontakt" class="py-12 md:py-16 px-6 border-t border-white/10">
     <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-3 gap-12 mb-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
         <!-- Left: Brand -->
         <div class="text-center md:text-left">
           <h4 class="font-bold text-white mb-4">The Racket School</h4>
