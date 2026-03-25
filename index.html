@@ -174,6 +174,26 @@
       transition: all 0.2s ease;
     }
 
+    .faq-answer {
+      display: none;
+      animation: slideDown 0.3s ease-out;
+    }
+
+    .card-dark.active .faq-answer {
+      display: block;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .dropdown-content a:hover {
       background-color: rgba(249,115,22,0.1);
       color: var(--orange);
@@ -211,6 +231,7 @@
           <a href="#pricing">Deine Padel-Gruppe</a>
           <a href="#schedule">Die KursTage</a>
           <a href="#included">Was inklusive ist</a>
+          <a href="#faq">FAQ</a>
           <a href="#instagram">Instagram</a>
           <a href="#terms">Geschäftsbedingungen</a>
           <a href="#kontakt">Kontakt</a>
@@ -433,6 +454,43 @@
               <li>✓ Falls auch die Halle ausfällt: <span class="font-semibold text-orange">Neuer Termin</span> wird automatisch mit dir abgestimmt</li>
             </ul>
             <p class="text-xs text-slate-500">Trainerin/Trainer-Änderungen sind möglich — bei Bedarf teilen wir das mit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-16 md:py-24 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-2xl sm:text-3xl md:text-5xl font-extrabold tracking-tight text-orange mb-3 md:mb-4">Häufig gestellt</h2>
+        <p class="text-base sm:text-lg text-slate-400">Deine Fragen beantwortet</p>
+      </div>
+
+      <div class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="card-dark rounded-2xl p-6 md:p-8 border border-white/10 hover:border-orange/30 transition">
+          <button class="w-full text-left flex items-start gap-4 group" onclick="this.parentElement.classList.toggle('active')">
+            <span class="text-orange font-bold text-lg flex-shrink-0 mt-1">Q</span>
+            <div class="flex-1">
+              <h3 class="text-lg md:text-xl font-bold text-white group-hover:text-orange transition">Ich bin nicht bei allen Terminen verfügbar. Kann ich nur für X Sessions bezahlen?</h3>
+            </div>
+          </button>
+          <div class="hidden mt-4 pl-10 faq-answer">
+            <p class="text-slate-300 text-sm md:text-base leading-relaxed">
+              <span class="text-orange font-semibold">A:</span> Ja, absolut! Du kannst auch nur 5 Sessions bezahlen statt 7. Du musst uns die Termine aber vorher mitteilen — diese Termine gehören dann dir. Du hast die Option, mit anderen Spielern deines Levels zu tauschen. Wenn du deine reservierten Termine verpasst, kannst du:
+            </p>
+            <ul class="mt-3 space-y-2 text-slate-300 text-sm md:text-base ml-6">
+              <li class="flex gap-2">
+                <span class="text-orange flex-shrink-0">✓</span>
+                <span>Den Termin an jemanden deines Levels weitergeben</span>
+              </li>
+              <li class="flex gap-2">
+                <span class="text-orange flex-shrink-0">✓</span>
+                <span>Oder: Du verlierst das Geld für diese Session</span>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
