@@ -175,12 +175,13 @@
     }
 
     .faq-answer {
-      display: none;
-      animation: slideDown 0.3s ease-out;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
     }
 
     .faq-item.active .faq-answer {
-      display: block;
+      max-height: 500px;
     }
 
     @keyframes slideDown {
@@ -1211,12 +1212,6 @@
         });
       });
 
-      // FAQ toggle functionality
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.addEventListener('click', () => {
-          item.classList.toggle('active');
-        });
-      });
 
       // Close dropdown when clicking outside
       document.addEventListener('click', () => {
