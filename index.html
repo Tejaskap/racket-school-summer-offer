@@ -214,17 +214,30 @@
 
   <!-- NAV -->
   <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-black/40 border-b border-white/5">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 py-3 flex items-center gap-3 sm:gap-8 overflow-x-auto">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between md:justify-start gap-8">
       <img src="./logo.png" alt="The Racket School" class="h-12 w-auto flex-shrink-0">
-      <div class="flex gap-2 sm:gap-6 text-xs sm:text-sm font-semibold flex-wrap sm:flex-nowrap">
-        <a href="#verfuegbare-slots" class="text-slate-300 hover:text-orange transition whitespace-nowrap">Verfügbare Slots</a>
-        <a href="#pricing" class="text-slate-300 hover:text-orange transition whitespace-nowrap">Deine Padel-Gruppe</a>
-        <a href="#schedule" class="text-slate-300 hover:text-orange transition whitespace-nowrap">Die KursTage</a>
-        <a href="#included" class="text-slate-300 hover:text-orange transition whitespace-nowrap">Was inklusive ist</a>
-        <a href="#instagram" class="text-slate-300 hover:text-orange transition whitespace-nowrap">Instagram</a>
-        <a href="#faq" class="text-orange hover:text-orange transition font-bold whitespace-nowrap">HGF</a>
-        <a href="#terms" class="text-slate-300 hover:text-orange transition whitespace-nowrap">Geschäftsbedingungen</a>
-        <a href="#kontakt" class="text-slate-300 hover:text-orange transition whitespace-nowrap">Kontakt</a>
+      <div class="hidden md:flex gap-6 text-sm font-semibold flex-wrap">
+        <a href="#verfuegbare-slots" class="text-slate-300 hover:text-orange transition">Verfügbare Slots</a>
+        <a href="#pricing" class="text-slate-300 hover:text-orange transition">Deine Padel-Gruppe</a>
+        <a href="#schedule" class="text-slate-300 hover:text-orange transition">Die KursTage</a>
+        <a href="#included" class="text-slate-300 hover:text-orange transition">Was inklusive ist</a>
+        <a href="#instagram" class="text-slate-300 hover:text-orange transition">Instagram</a>
+        <a href="#faq" class="text-orange hover:text-orange transition font-bold">HGF</a>
+        <a href="#terms" class="text-slate-300 hover:text-orange transition">Geschäftsbedingungen</a>
+        <a href="#kontakt" class="text-slate-300 hover:text-orange transition">Kontakt</a>
+      </div>
+      <div class="dropdown md:hidden">
+        <button class="text-sm font-semibold text-orange transition cursor-pointer bg-none border-none">Menu ▼</button>
+        <div class="dropdown-content">
+          <a href="#verfuegbare-slots">Verfügbare Slots</a>
+          <a href="#pricing">Deine Padel-Gruppe</a>
+          <a href="#schedule">Die KursTage</a>
+          <a href="#included">Was inklusive ist</a>
+          <a href="#faq" class="text-orange font-bold">HGF</a>
+          <a href="#instagram">Instagram</a>
+          <a href="#terms">Geschäftsbedingungen</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
       </div>
     </div>
   </nav>
