@@ -649,7 +649,7 @@
           sessions: 7,
           days: [
             {
-              dayName: 'Samstag',
+              dayName: 'Freitag',
               trainer: 'TJ',
               sessions: [
                 {
@@ -657,11 +657,11 @@
                   name: 'Amateure',
                   subtitle: 'COURT CLUB',
                   level: 'Spielst regelmäßig, kennst das Spiel, willst dich gezielt verbessern',
-                  time: '14:00–15:30',
+                  time: '17:00–18:30',
                   price: 270,
                   perSession: 38,
                   maxPlayers: 4,
-                  dayOfWeek: 'Samstag',
+                  dayOfWeek: 'Freitag',
                   trainer: 'TJ',
                   highlights: [
                     '7 feste Sessions',
@@ -678,11 +678,11 @@
                   name: 'Fortgeschrittene',
                   subtitle: 'PERFORMANCE CLUB',
                   level: 'Spielst Matches regelmäßig, willst auf höherem Niveau trainieren',
-                  time: '15:30–17:00',
+                  time: '18:30–20:00',
                   price: 350,
                   perSession: 50,
                   maxPlayers: 3,
-                  dayOfWeek: 'Samstag',
+                  dayOfWeek: 'Freitag',
                   trainer: 'TJ',
                   highlights: [
                     '7 feste Sessions',
@@ -798,13 +798,13 @@
               '29. April', '06. Mai', '13. Mai', '20. Mai',
               '10. Juni', '17. Juni', '24. Juni'
             ],
+            friday: [
+              '01. Mai', '08. Mai', '15. Mai', '22. Mai',
+              '12. Juni', '19. Juni', '26. Juni'
+            ],
             thursday: [
               '30. April', '07. Mai', '14. Mai', '21. Mai',
               '11. Juni', '18. Juni', '25. Juni'
-            ],
-            saturday: [
-              '02. Mai', '09. Mai', '16. Mai', '23. Mai',
-              '13. Juni', '20. Juni', '27. Juni'
             ]
           }
         }
@@ -819,8 +819,8 @@
       const container = document.getElementById('quickStats');
       let html = '';
 
-      // Order: Wednesday, Thursday, Saturday
-      const dayOrder = ['Mittwoch', 'Donnerstag', 'Samstag'];
+      // Order: Wednesday, Friday, Thursday
+      const dayOrder = ['Mittwoch', 'Freitag', 'Donnerstag'];
       const sortedDays = dayOrder.map(dayName =>
         block.days.find(d => d.dayName === dayName)
       );
@@ -857,8 +857,8 @@
       const block = courseData.blocks[0];
       const container = document.getElementById('pricingCards');
 
-      // Order: Wednesday, Thursday, Saturday
-      const dayOrder = ['Mittwoch', 'Donnerstag', 'Samstag'];
+      // Order: Wednesday, Friday, Thursday
+      const dayOrder = ['Mittwoch', 'Freitag', 'Donnerstag'];
       const sortedDays = dayOrder.map(dayName =>
         block.days.find(d => d.dayName === dayName)
       );
@@ -924,8 +924,8 @@
       // Day order: Wednesday, Thursday, Saturday
       const dayOrder = [
         { dayName: 'Mittwoch', key: 'wednesday' },
-        { dayName: 'Donnerstag', key: 'thursday' },
-        { dayName: 'Samstag', key: 'saturday' }
+        { dayName: 'Freitag', key: 'friday' },
+        { dayName: 'Donnerstag', key: 'thursday' }
       ];
 
       dayOrder.forEach((dayInfo, dayIndex) => {
