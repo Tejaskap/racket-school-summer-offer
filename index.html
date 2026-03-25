@@ -882,8 +882,8 @@
       const container = document.getElementById('quickStats');
       let html = '';
 
-      // Order: Wednesday, Friday, Thursday
-      const dayOrder = ['Mittwoch', 'Freitag', 'Donnerstag'];
+      // Order: Wednesday, Thursday, Friday
+      const dayOrder = ['Mittwoch', 'Donnerstag', 'Freitag'];
       const sortedDays = dayOrder.map(dayName =>
         block.days.find(d => d.dayName === dayName)
       );
@@ -920,8 +920,8 @@
       const block = courseData.blocks[0];
       const container = document.getElementById('pricingCards');
 
-      // Order: Wednesday, Friday, Thursday
-      const dayOrder = ['Mittwoch', 'Freitag', 'Donnerstag'];
+      // Order: Wednesday, Thursday, Friday
+      const dayOrder = ['Mittwoch', 'Donnerstag', 'Freitag'];
       const sortedDays = dayOrder.map(dayName =>
         block.days.find(d => d.dayName === dayName)
       );
@@ -987,8 +987,8 @@
       // Day order: Wednesday, Thursday, Saturday
       const dayOrder = [
         { dayName: 'Mittwoch', key: 'wednesday' },
-        { dayName: 'Freitag', key: 'friday' },
-        { dayName: 'Donnerstag', key: 'thursday' }
+        { dayName: 'Donnerstag', key: 'thursday' },
+        { dayName: 'Freitag', key: 'friday' }
       ];
 
       dayOrder.forEach((dayInfo, dayIndex) => {
